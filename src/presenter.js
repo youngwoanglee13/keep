@@ -1,15 +1,11 @@
-import sumar from "./sumador";
+import nota from "./notas.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const descripcion = document.querySelector("#descripcion");
+const form = document.querySelector("#keep-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML += "<p>" + nota(descripcion.value) + "</p>";
 });
