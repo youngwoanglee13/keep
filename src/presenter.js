@@ -1,11 +1,12 @@
-import nota from "./notas.js";
+import Keep from "./Keep.js";
 
 const descripcion = document.querySelector("#descripcion");
 const form = document.querySelector("#keep-form");
 const div = document.querySelector("#resultado-div");
-
+const keep = new Keep();
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  div.innerHTML += "<p>" + nota(descripcion.value) + "</p>";
+  keep.anotar(descripcion.value);
+  div.innerHTML = keep.getNotasHtml();
 });
