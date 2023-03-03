@@ -5,15 +5,24 @@ class Keep {
   }
   anotar(titulo,descripcion) {
     const nota = new Nota(titulo,descripcion);
-    this.notas.push(nota);
+    if (this.validarNota(nota)){
+      this.notas.push(nota);
+    }
     return nota;
   }
   getNotasHtml() {
     this.listadenotas ="";
     for (let i = 0; i <  this.notas.length; i++) {
-        this.listadenotas = "<p>" + this.notas[i].titulo +"<br>"+ this.notas[i].descripcion + "</p>" + this.listadenotas;
+        this.listadenotas = "<div class='nota'>" + "<div =class'titulo'>"+this.notas[i].titulo+"</div> <div class='descripcion'>"+ this.notas[i].descripcion + "</div>"+ "</div>" + this.listadenotas;
     }
     return this.listadenotas;
+  }
+  validarNota(nota) {
+    if (nota.titulo == "") {
+      alert("El titulo no puede estar vacio");
+      return false;
+    }
+    return true;
   }
   
 }

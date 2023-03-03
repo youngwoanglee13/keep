@@ -1,11 +1,15 @@
 <html>
   <body>
-    <h1>Keep Ucb</h1>
+    <h1 id="tituloApp">Keep Ucb</h1>
     <form id="keep-form">
-      <label for="titulo">titulo:</label>
-      <input type="text" id="titulo"/>
-      <label for="descripcion">nota:</label>
+      <div>
+        <label for="titulo">titulo:</label>
+        <input type="text" id="titulo" required/>
+      </div>
+      <div>
+        <label for="descripcion">nota:</label>
       <input type="text" id="descripcion" />
+      </div>
       <input type="submit" value="crear" id="crear-button" />
     </form>
     <div id="resultado-div"></div>
