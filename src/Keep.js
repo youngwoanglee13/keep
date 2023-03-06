@@ -13,7 +13,7 @@ class Keep {
   getNotasHtml() {
     this.listadenotas ="";
     for (let i = 0; i <  this.notas.length; i++) {
-        this.listadenotas = "<div class='nota'>" + "<div =class'titulo'>"+this.notas[i].titulo+"</div> <div class='descripcion'>"+ this.notas[i].descripcion + "</div>"+ "</div>" + this.listadenotas;
+      this.listadenotas = "<div class='nota'>" + "<div =class'titulo'>"+this.notas[i].titulo+"<button id='"+this.notas[i].titulo+ "'>Eliminar</button></input></div> <div class='descripcion'>"+ this.notas[i].descripcion + "</div>"+ "</div>" + this.listadenotas;
     }
     return this.listadenotas;
   }
@@ -29,6 +29,13 @@ class Keep {
       }
     }
     return true;
+  }
+  ELiminarNota(titulo) {
+    for (let i = 0; i < this.notas.length; i++) {
+      if (this.notas[i].titulo == titulo) {
+        this.notas.splice(i, 1);
+      }
+    }
   }
   
 }
