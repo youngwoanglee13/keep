@@ -6,18 +6,18 @@ const form = document.querySelector("#keep-form");
 const div = document.querySelector("#resultado-div");
 const keep = new Keep();
 const modalE = document.querySelector("#modalE");
-const idNota="idNota";
+const idNota = document.querySelector("#TitulonotaParaEliminar"); 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   keep.anotar(titulo.value,descripcion.value);
   div.innerHTML = keep.getNotasHtml();
 });
 div.addEventListener("click", (event) => {
-  idNota=event.target.id;
+  idNota.innerHTML=event.target.id;
   window.modalE.showModal();
 });
 modalE.addEventListener("click", (event) => {
-  keep.ELiminarNota("x","eliminarModal");
+  keep.ELiminarNota(idNota.innerHTML,event.target.id);
   window.modalE.close();
   div.innerHTML = keep.getNotasHtml();
 });
