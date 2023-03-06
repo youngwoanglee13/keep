@@ -30,12 +30,10 @@ class Keep {
     }
     return true;
   }
-  ELiminarNota(titulo,confirmacion) {
-    if (confirmacion == "eliminarModal"){
-      for (let i = 0; i < this.notas.length; i++) {
-        if (this.notas[i].titulo == titulo) {
-          this.notas.splice(i, 1);
-        }
+  ELiminarNota(titulo) {
+    for (let i = 0; i < this.notas.length; i++) {
+      if (this.notas[i].titulo == titulo) {
+        this.notas.splice(i, 1);
       }
     }
   }
