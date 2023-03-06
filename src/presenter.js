@@ -13,10 +13,12 @@ form.addEventListener("submit", (event) => {
   div.innerHTML = keep.getNotasHtml();
 });
 div.addEventListener("click", (event) => {
+  event.preventDefault();
   idNota=event.target.id;
   window.modalE.showModal();
 });
 modalE.addEventListener("click", (event) => {
+  event.preventDefault();
   keep.ELiminarNota(idNota,event.target.id);
   window.modalE.close();
   div.innerHTML = keep.getNotasHtml();
