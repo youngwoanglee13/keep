@@ -22,6 +22,12 @@ class Keep {
       alert("El titulo no puede estar vacio");
       return false;
     }
+    for (let i = 0; i < this.notas.length; i++) {
+      if (this.notas[i].titulo == nota.titulo) {
+        alert("El titulo ya existe");
+        return false;
+      }
+    }
     return true;
   }
   
