@@ -17,7 +17,7 @@ div.addEventListener("click", (event) => {
   window.modalE.showModal();
 });
 modalE.addEventListener("click", (event) => {
- // keep.ELiminarNota(idNota,event.target.id);
+  keep.ELiminarNota(idNota,"eliminarModal");
   window.modalE.close();
   div.innerHTML = keep.getNotasHtml();
 });
