@@ -13,6 +13,6 @@ form.addEventListener("submit", (event) => {
   div.innerHTML = keep.getNotasHtml();
 });
 div.addEventListener("click", (event) => {
-  keep.ELiminarNota(event.target.id);
+  keep.ELiminarNota(event.target.id,"");
   div.innerHTML = keep.getNotasHtml();
 });
