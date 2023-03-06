@@ -9,7 +9,7 @@ const modalE = document.querySelector("#modalE");
 idNota="idNota";
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  keep.anotar(titulo.value,descripcion.value);
+  //keep.anotar(titulo.value,descripcion.value);
   div.innerHTML = keep.getNotasHtml();
 });
 
