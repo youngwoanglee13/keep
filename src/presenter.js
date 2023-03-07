@@ -14,6 +14,8 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   keep.anotar(titulo.value,descripcion.value);
   div.innerHTML = keep.getNotasHtml();
+  titulo.value = "";
+  descripcion.value = "";
 });
 div.addEventListener("click", (event) => {
   const isButton = event.target.nodeName === 'BUTTON';

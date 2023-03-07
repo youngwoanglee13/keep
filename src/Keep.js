@@ -13,7 +13,7 @@ class Keep {
   getNotasHtml() {
     this.listadenotas ="";
     for (let i = 0; i <  this.notas.length; i++) {
-      this.listadenotas = "<div class='nota'>" + "<div =class'titulo'>"+this.notas[i].titulo+"<button id='"+this.notas[i].titulo+ "'>Eliminar</button></input></div> <div class='descripcion'>"+ this.notas[i].descripcion + "</div>"+ "</div>" + this.listadenotas;
+      this.listadenotas = "<div class='nota'>" + "<div class='tituloNota'>"+this.notas[i].titulo+"</div><button class='botonEliminarNota' id='"+this.notas[i].titulo+ "'>Eliminar</button> <div class='descripcionNota'>"+ this.notas[i].descripcion + "</div>"+ "</div>" + this.listadenotas;
     }
     return this.listadenotas;
   }

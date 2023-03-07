@@ -1,25 +1,29 @@
 <html>
   <head>
+    <link rel="stylesheet" href="./src/estilo.css">
   </head>
   <body>
     <div id="header">
       <span id="tituloApp">Keep UCB</span>
       <input type="text" id="ContenidoBuscar" placeholder="Buscar" />
       <button id="buscar-button">Buscar</button>
-      <input type="checkbox" id="checkboxBuscarDescripcion" value="yes">
-      <label for="titulo">Por descripcion</label>
+      <div id="DivPorDescripcion">
+        <input type="checkbox" id="checkboxBuscarDescripcion" value="yes">
+        <label for="titulo">Por descripcion</label>
+      </div>
+      
     </div>
     
     <form id="keep-form">
       <div>
-        
         <input type="text" id="titulo" placeholder="Titulo" required/>
+        <input type="submit" value="Crear" id="crear-button" />
       </div>
       <div>
        
       <input type="text" id="descripcion" placeholder="Descripcion" />
       </div>
-      <input type="submit" value="crear" id="crear-button" />
+      
     </form>
     <div id="resultado-div"></div>
     <dialog id="modalE">
