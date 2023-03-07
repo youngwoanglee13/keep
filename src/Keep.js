@@ -4,7 +4,7 @@ class Keep {
     this.notas = [];
   }
   anotar(titulo,descripcion) {
-    const nota = new Nota(titulo,descripcion);
+    const nota = new Nota(titulo.toUpperCase(),descripcion);
     if (this.validarNota(nota)){
       this.notas.push(nota);
     }
@@ -39,6 +39,18 @@ class Keep {
       }
     }
   }
+  BuscarPorTitulo(titulo) {
+    for (let i = 0; i < this.notas.length; i++) {
+      if (this.notas[i].titulo == titulo) {
+        return this.notas[i];
+      }
+    }
+    return null;
+  }
+  //busca nota por la descripcion mas parecida:
   
-}
-export default Keep;
+  Buscar(contexto,opcion){
+      return this.BuscarPorTitulo(contexto.toUpperCase());
+  }
+
+}export default Keep;

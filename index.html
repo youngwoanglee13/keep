@@ -1,23 +1,56 @@
 <html>
+  <head>
+    <style>
+      .nota {
+        background-color: #363636;
+        margin: 2px; width:auto ;height: 80px;
+        text-align: left;
+      }
+      body {
+        background-color: #242424;
+        color:ghostwhite;
+        text-align: center;
+      }
+      #keep-form {
+        color:ghostwhite
+      }
+      #tituloApp{
+        text-align: center;
+        color:ghostwhite
+      }
+    </style>
+  </head>
   <body>
-    <h1 id="tituloApp">Keep Ucb</h1>
+    <div id="header">
+      <span id="tituloApp">Keep UCB</span>
+      <input type="text" id="ContenidoBuscar" placeholder="Buscar" />
+      <button id="buscar-button">Buscar</button>
+
+    </div>
+    
     <form id="keep-form">
       <div>
-        <label for="titulo">titulo:</label>
-        <input type="text" id="titulo" required/>
+        
+        <input type="text" id="titulo" placeholder="Titulo" required/>
       </div>
       <div>
-        <label for="descripcion">nota:</label>
-      <input type="text" id="descripcion" />
+       
+      <input type="text" id="descripcion" placeholder="Descripcion" />
       </div>
       <input type="submit" value="crear" id="crear-button" />
     </form>
     <div id="resultado-div"></div>
     <dialog id="modalE">
-      <p>¿Estas seguro de eliminar esta nota?</p>
+      <div>¿Estas seguro de eliminar esta nota?</div>
+      <div id="TitulonotaParaEliminar"></div>
       <button id="eliminarModal">Eliminar</button>
       <button id="cancelarModal">Cancelar</button>
    </dialog>
+   <dialog id="modalNota">
+      <div id="tituloModalNota"></div>
+      <div id="descripcionModalNota"></div> 
+      <button id="cerrarModalNota">Cerrar</button>
+ </dialog>
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
