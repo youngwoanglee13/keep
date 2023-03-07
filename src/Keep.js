@@ -47,10 +47,27 @@ class Keep {
     }
     return null;
   }
-  //busca nota por la descripcion mas parecida:
-  
-  Buscar(contexto,opcion){
-      return this.BuscarPorTitulo(contexto.toUpperCase());
+  BuscarPorDescripcion(descripcion) {
+    let nota = new Nota("No se encontro la nota","");
+    let coincidencias = 0;
+    for (let i = 0; i < this.notas.length; i++) {
+      if (this.notas[i].descripcion.includes(descripcion)) {
+        if (this.notas[i].descripcion.length > coincidencias){
+          coincidencias = this.notas[i].descripcion.length;
+          nota = this.notas[i];
+        }
+      }
+    }
+    if(coincidencias == 0){
+      return null;
+    }
+    return nota;
   }
-
+  Buscar(contexto,opcion){
+    if (!opcion){
+      return this.BuscarPorTitulo(contexto.toUpperCase());
+    }else{
+      return this.BuscarPorDescripcion(contexto);
+    }
+  }
 }export default Keep;

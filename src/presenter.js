@@ -28,7 +28,7 @@ modalE.addEventListener("click", (event) => {
   div.innerHTML = keep.getNotasHtml();
 });
 botonBuscar.addEventListener("click", (event) => {
-  const nota = keep.Buscar(document.querySelector("#ContenidoBuscar").value,"");
+  const nota = keep.Buscar(document.querySelector("#ContenidoBuscar").value,document.querySelector("#checkboxBuscarDescripcion").checked);
   if (nota != null){
     document.querySelector("#tituloModalNota").innerHTML = nota.titulo;
     document.querySelector("#descripcionModalNota").innerHTML = nota.descripcion;
