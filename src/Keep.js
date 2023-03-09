@@ -7,13 +7,14 @@ class Keep {
     const nota = new Nota(titulo.toUpperCase(),descripcion);
     if (this.validarNota(nota)){
       this.notas.push(nota);
+      return nota;
     }
-    return nota;
+    return null;
   }
   getNotasHtml() {
     this.listadenotas ="";
     for (let i = 0; i <  this.notas.length; i++) {
-      this.listadenotas = "<div class='nota'>" + "<div class='tituloNota'>"+this.notas[i].titulo+"</div><button class='botonEliminarNota' id='"+this.notas[i].titulo+ "'>Eliminar</button> <div class='descripcionNota'>"+ this.notas[i].descripcion + "</div>"+ "</div>" + this.listadenotas;
+      this.listadenotas = "<div class='nota'>" + "<div class='tituloNota'>"+this.notas[i].titulo+"</div><button class='botonEliminarNota' id='"+this.notas[i].titulo+ "'>Eliminar</button><button class='botonEditarNota' id='"+this.notas[i].titulo+"E'>Editar</button> <div class='descripcionNota'>"+ this.notas[i].descripcion + "</div>"+ "</div>" + this.listadenotas;
     }
     return this.listadenotas;
   }

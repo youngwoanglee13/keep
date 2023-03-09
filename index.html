@@ -38,7 +38,19 @@
       <div id="tituloModalNota"></div>
       <div id="descripcionModalNota"></div> 
       <button id="cerrarModalNota">Cerrar</button>
- </dialog>
+  </dialog>
+  <dialog id="modalEditar">
+      <div>
+        <input type="text" id="tituloEditar" placeholder="Titulo" required/>
+      </div>
+      <div>
+        <input type="text" id="descripcionEditar" placeholder="Descripcion" /> 
+      </div>
+      <div>
+        <button id="editarNotaModal">Editar</button>
+        <button id="cerrarEditarNota">Cerrar</button>
+      </div>
+  </dialog>
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>

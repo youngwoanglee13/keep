@@ -5,10 +5,11 @@ const descripcion = document.querySelector("#descripcion");
 const form = document.querySelector("#keep-form");
 const div = document.querySelector("#resultado-div");
 const keep = new Keep();
-const modalE = document.querySelector("#modalE");
 const idNota = document.querySelector("#TitulonotaParaEliminar"); 
 const botonBuscar = document.querySelector("#buscar-button");
 const modalNota = document.querySelector("#modalNota");
+const modalE = document.querySelector("#modalE");
+const modalEditar = document.querySelector("#modalEditar");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -18,10 +19,14 @@ form.addEventListener("submit", (event) => {
   descripcion.value = "";
 });
 div.addEventListener("click", (event) => {
-  const isButton = event.target.nodeName === 'BUTTON';
-  if (isButton) {
-    idNota.innerHTML=event.target.id;
+  idNota.innerHTML=event.target.id;
+  if (event.target.className=="botonEliminarNota") {
     window.modalE.showModal();
+  }
+  if (event.target.className=="botonEditarNota") {
+    document.querySelector("#tituloEditar").value=idNota.innerHTML.substring(0,idNota.innerHTML.length-1);
+    document.querySelector("#descripcionEditar").value=keep.BuscarPorTitulo(idNota.innerHTML.substring(0,idNota.innerHTML.length-1)).descripcion;
+    window.modalEditar.showModal();
   }
 });
 modalE.addEventListener("click", (event) => {
@@ -42,6 +47,17 @@ botonBuscar.addEventListener("click", (event) => {
 modalNota.addEventListener("click", (event) => {
   window.modalNota.close();
 });
-
+modalEditar.addEventListener("click", (event) => {
+  if (event.target.id=="editarNotaModal"){
+    keep.ELiminarNota(idNota.innerHTML.substring(0,idNota.innerHTML.length-1),"eliminarModal");
+    if(keep.anotar(document.querySelector("#tituloEditar").value,document.querySelector("#descripcionEditar").value)!=null){
+      window.modalEditar.close();
+      div.innerHTML = keep.getNotasHtml();
+    }
+  }
+  if (event.target.id=="cerrarEditarNota"){
+    window.modalEditar.close();
+  }
+});
 
 

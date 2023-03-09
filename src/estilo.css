@@ -1,6 +1,6 @@
 .nota {
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
     width:450px ;height: 100px;
     text-align: left;
     border-radius: 8px;
@@ -54,7 +54,6 @@
   }
   .descripcionNota{
     margin-left: 12px;
-    
   }
   .botonEliminarNota{
     width: 100px;
@@ -92,7 +91,7 @@
   }
   #descripcion{
     margin-top: 5px;
-    
+    margin-bottom: 30px;
     text-align:start;
   }
   #crear-button{
@@ -115,5 +114,17 @@
    font-size: 10px;
    color:rgb(194, 194, 195);
   }
+  .botonEditarNota{
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #b0b0b000;
+    background-color: #24242400;
+    color:ghostwhite;
+    float: right;
+    margin-top: -10px;
+    margin-right: -3px;
+  }
+
 
   
